@@ -7,11 +7,6 @@ import Layout from '../layouts/Layout.astro';
 		<section class="hero">
 			<h1>情報工学部生が教える<br/><span class="text-gradient">「論理的に考える」力</span></h1>
 			<p class="subtitle">プログラミング(C/Java)から、数学・英語・情報Iの定期テスト対策まで。<br>現役大学生がマンツーマンで指導します。</p>
-<Layout title="情報工学部生のプログラミング家庭教師 | C言語・Java専門">
-	<main>
-		<section class="hero">
-			<h1>情報工学部生が教える<br/><span class="text-gradient">「本物の」プログラミング</span></h1>
-			<p class="subtitle">C言語・Javaの単位取得から、実践的な開発スキルまで。<br>現役大学生によるマンツーマン指導。</p>
 			<div class="cta-buttons">
 				<a href="#contact" class="btn-primary">初回相談（無料）に申し込む</a>
 				<a href="#about" class="btn-secondary">詳しく見る</a>
@@ -22,10 +17,11 @@ import Layout from '../layouts/Layout.astro';
 			<h2>講師プロフィール</h2>
 			<div class="card">
 				<p><strong>情報工学部 2年生</strong></p>
-				<p>大学ではコンピュータサイエンスの基礎理論から、実際のソフトウェア開発までを専攻。特に「C言語」と「Java」を得意としており、メモリ管理やオブジェクト指向といった独学でつまずきやすいポイントを噛み砕いて解説します。</p>
+				<p>大学ではコンピュータサイエンスを専攻。プログラミングの技術だけでなく、「なぜそうなるのか？」という論理的な考え方を大切にしています。<br>
+				理系科目（数学・情報）はもちろん、受験で培った英語の指導も可能です。</p>
 				<ul>
-					<li>得意言語: C, Java</li>
-					<li>指導対象: 高校生、大学生、社会人初学者</li>
+					<li>指導可能科目: C言語, Java, Python, 数学(中高), 英語(中高), 情報I</li>
+					<li>対象: 中学生、高校生、大学生、社会人初心者</li>
 				</ul>
 			</div>
 		</section>
@@ -34,26 +30,31 @@ import Layout from '../layouts/Layout.astro';
 			<h2>指導プラン・料金</h2>
 			<div class="grid">
 				<div class="card">
-					<h3>🔰 基礎固めコース</h3>
-					<p class="price">3,000円 / 時間</p>
-					<p>プログラミングの「いろは」から解説。環境構築もお手伝いします。</p>
+					<h3>💻 プログラミングコース</h3>
+					<p class="price">3,000円 <span class="unit">/ 時間</span></p>
+					<p class="desc">C言語・Java・Pythonなど。<br>環境構築から大学の課題、アプリ開発の基礎までサポートします。</p>
 				</div>
 				<div class="card">
-					<h3>🎓 大学補習・試験対策</h3>
-					<p class="price">3,500円 / 時間</p>
-					<p>大学の講義（C/Java）の課題サポートや、情報処理技術者試験の対策など。</p>
+					<h3>📚 学校成績アップコース</h3>
+					<p class="price">2,500円 <span class="unit">/ 時間</span></p>
+					<p class="desc">中高生向け。数学・英語・情報I。<br>定期テスト対策や、共通テスト「情報I」の基礎固めに。</p>
+				</div>
+				<div class="card">
+					<h3>🎓 大学補習・資格コース</h3>
+					<p class="price">3,500円 <span class="unit">/ 時間</span></p>
+					<p class="desc">大学の単位取得サポートや、基本情報技術者試験などの資格対策を行います。</p>
 				</div>
 			</div>
-			<p class="note">※ 入会金・教材費は一切かかりません。都度払いです。</p>
+			<p class="note">※ 入会金・教材費は一切かかりません。都度払いです。<br>※ 交通費は実費のみ別途頂戴します（オンラインなら無料）。</p>
 		</section>
 
 		<section id="contact" class="section contact-section">
 			<h2>お問い合わせ</h2>
-			<p>まずは現状のお悩みをお聞かせください。無理な勧誘はいたしません。</p>
-			<a href="https://forms.google.com/your-form-url" target="_blank" class="btn-primary">Googleフォームから問い合わせる</a>
+			<p>「C言語を教えてほしい」「数学の成績を上げたい」など、<br>まずはお気軽にご相談ください。</p>
+			<a href="[https://forms.google.com/your-form-url](https://forms.google.com/your-form-url)" target="_blank" class="btn-primary">Googleフォームから問い合わせる</a>
 		</section>
 	</main>
-
+	
 	<footer>
 		<p>&copy; 2025 Info-Eng Tutor. All rights reserved.</p>
 	</footer>
@@ -63,7 +64,7 @@ import Layout from '../layouts/Layout.astro';
 	main {
 		margin: auto;
 		padding: 1rem;
-		width: 800px;
+		width: 900px; /* 横幅を少し広げました */
 		max-width: calc(100% - 2rem);
 		font-size: 16px;
 		line-height: 1.6;
@@ -91,35 +92,47 @@ import Layout from '../layouts/Layout.astro';
 		color: #555;
 	}
 	.section {
-		margin-bottom: 4rem;
+		margin-bottom: 5rem;
 	}
 	h2 {
 		font-size: 2rem;
 		border-bottom: 2px solid #ddd;
 		padding-bottom: 0.5rem;
-		margin-bottom: 1.5rem;
+		margin-bottom: 2rem;
+		text-align: center;
 	}
 	.card {
 		background: white;
-		padding: 1.5rem;
-		border-radius: 8px;
-		box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-		margin-bottom: 1rem;
+		padding: 2rem;
+		border-radius: 12px;
+		box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+		border: 1px solid #eee;
 	}
 	.grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-		gap: 1rem;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 1.5rem;
 	}
 	.price {
-		font-size: 1.5rem;
+		font-size: 2rem;
 		font-weight: bold;
 		color: rgb(var(--accent));
+		margin: 0.5rem 0;
+	}
+	.unit {
+		font-size: 1rem;
+		color: #666;
+		font-weight: normal;
+	}
+	.desc {
+		font-size: 0.95rem;
+		color: #555;
 	}
 	.note {
 		font-size: 0.9rem;
 		color: #666;
 		text-align: right;
+		margin-top: 1rem;
 	}
 	.cta-buttons {
 		display: flex;
@@ -128,20 +141,21 @@ import Layout from '../layouts/Layout.astro';
 	}
 	.btn-primary, .btn-secondary {
 		display: inline-block;
-		padding: 0.8rem 1.6rem;
+		padding: 0.8rem 2rem;
 		border-radius: 999px;
 		text-decoration: none;
 		font-weight: bold;
-		transition: transform 0.2s;
+		transition: transform 0.2s, opacity 0.2s;
 	}
 	.btn-primary {
 		background: rgb(var(--accent));
 		color: white;
+		box-shadow: 0 4px 14px 0 rgba(136, 58, 234, 0.39);
 	}
 	.btn-secondary {
 		background: white;
 		color: rgb(var(--accent));
-		border: 1px solid rgb(var(--accent));
+		border: 2px solid rgb(var(--accent));
 	}
 	.btn-primary:hover, .btn-secondary:hover {
 		transform: translateY(-2px);
@@ -149,19 +163,21 @@ import Layout from '../layouts/Layout.astro';
 	}
 	.contact-section {
 		text-align: center;
-		background: #e8e8e8;
-		padding: 3rem 1rem;
-		border-radius: 12px;
+		background: linear-gradient(to bottom right, #f8f9fa, #e9ecef);
+		padding: 4rem 1rem;
+		border-radius: 20px;
 	}
 	footer {
 		text-align: center;
-		padding: 2rem;
+		padding: 3rem;
 		color: #888;
 		font-size: 0.9rem;
+		border-top: 1px solid #eee;
 	}
 
 	@media (max-width: 600px) {
 		h1 { font-size: 2rem; }
-		.cta-buttons { flex-direction: column; }
+		.cta-buttons { flex-direction: column; align-items: center; }
+		.btn-primary, .btn-secondary { width: 100%; box-sizing: border-box; text-align: center; }
 	}
 </style>
