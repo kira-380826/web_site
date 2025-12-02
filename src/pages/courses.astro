@@ -1,0 +1,202 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="指導コース詳細 | 情報工学部生の家庭教師">
+	<main>
+		<section class="header-section">
+			<h1>指導コース・カリキュラム</h1>
+			<p>生徒さんの目標に合わせて、オーダーメイドの学習計画を作成します。</p>
+		</section>
+
+		<section class="course-detail">
+			<div class="course-header">
+				<h2>💻 プログラミングコース</h2>
+				<span class="badge">人気No.1</span>
+			</div>
+			<div class="content-wrapper">
+				<div class="description">
+					<p>「コードを書く楽しさ」と「エンジニアの思考法」を伝えます。<br>
+					単に文法を覚えるだけでなく、エラーが出たときの対処法（デバッグ）や、きれいなコードの書き方など、実践的なスキルを重視します。</p>
+					
+					<h3>こんな方におすすめ</h3>
+					<ul class="check-list">
+						<li>将来エンジニアや理系学部に進みたい中高生</li>
+						<li>「情報I」のプログラミング分野を完璧にしたい</li>
+						<li>C言語やJavaの授業についていけなくなった大学生</li>
+					</ul>
+
+					<h3>カリキュラム例（C言語入門の場合）</h3>
+					<div class="curriculum-box">
+						<dl>
+							<dt>Step 1: 環境構築</dt>
+							<dd>ご自身のPCで開発ができるよう、VS Codeなどのツール導入をサポートします。</dd>
+							<dt>Step 2: 基礎文法</dt>
+							<dd>変数、条件分岐(if)、繰り返し(for/while)といった基本を、パズル感覚で習得します。</dd>
+							<dt>Step 3: アルゴリズム</dt>
+							<dd>「並び替え（ソート）」などを通じて、コンピュータに効率よく計算させる手順を学びます。</dd>
+							<dt>Step 4: 実践課題</dt>
+							<dd>大学の課題サポートや、簡単なゲーム制作に挑戦します。</dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="course-detail">
+			<div class="course-header">
+				<h2>📚 学校成績アップコース</h2>
+			</div>
+			<div class="content-wrapper">
+				<div class="description">
+					<p>数学・英語・情報Iを中心に、学校の定期テスト対策から受験の基礎固めまで行います。<br>
+					「なぜそうなるのか？」という理屈（論理）を大切にするため、丸暗記に頼らない応用力が身につきます。</p>
+
+					<h3>指導の特長</h3>
+					<ul class="check-list">
+						<li><strong>数学:</strong> 途中式の書き方を徹底指導し、ケアレスミスを減らします。</li>
+						<li><strong>情報I:</strong> 共通テストで配点が高まる「プログラミング」「データ活用」分野を重点的に解説します。</li>
+						<li><strong>質問し放題:</strong> 授業時間外でも、LINEやDiscord等で分からない問題の写真を送っていただければ解説します。</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<div class="back-link">
+			<a href="/#contact" class="btn-primary">無料相談・お問い合わせはこちら</a>
+			<br/><br/>
+			<a href="/" class="btn-text">← トップページに戻る</a>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		color: #333;
+	}
+	.header-section {
+		text-align: center;
+		padding: 4rem 0 3rem;
+	}
+	h1 {
+		font-size: 2.5rem;
+		color: rgb(var(--accent-dark));
+		margin-bottom: 0.5rem;
+	}
+	
+	/* Course Style */
+	.course-detail {
+		background: white;
+		border-radius: 16px;
+		padding: 2.5rem;
+		margin-bottom: 3rem;
+		box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+		border: 1px solid #eee;
+	}
+	.course-header {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		margin-bottom: 1.5rem;
+		border-bottom: 2px solid #f0f0f0;
+		padding-bottom: 1rem;
+	}
+	.course-header h2 {
+		margin: 0;
+		font-size: 1.8rem;
+		color: rgb(var(--accent));
+	}
+	.badge {
+		background: #ff6b6b;
+		color: white;
+		font-size: 0.8rem;
+		padding: 0.2rem 0.6rem;
+		border-radius: 4px;
+		font-weight: bold;
+	}
+	h3 {
+		font-size: 1.2rem;
+		margin-top: 2rem;
+		margin-bottom: 1rem;
+		color: rgb(var(--accent-dark));
+		border-left: 4px solid rgb(var(--accent-light));
+		padding-left: 0.8rem;
+	}
+	
+	/* Lists */
+	.check-list {
+		list-style: none;
+		padding: 0;
+	}
+	.check-list li {
+		position: relative;
+		padding-left: 1.5rem;
+		margin-bottom: 0.5rem;
+	}
+	.check-list li::before {
+		content: '✔';
+		position: absolute;
+		left: 0;
+		color: rgb(var(--accent));
+		font-weight: bold;
+	}
+
+	/* Curriculum Box */
+	.curriculum-box {
+		background: #f8f9fa;
+		padding: 1.5rem;
+		border-radius: 8px;
+	}
+	dl {
+		margin: 0;
+	}
+	dt {
+		font-weight: bold;
+		color: rgb(var(--accent));
+		margin-top: 1rem;
+	}
+	dt:first-child { margin-top: 0; }
+	dd {
+		margin-left: 0;
+		margin-bottom: 0.5rem;
+		font-size: 0.95rem;
+	}
+
+	/* Buttons */
+	.back-link {
+		text-align: center;
+		padding: 3rem 0;
+	}
+	.btn-primary {
+		display: inline-block;
+		padding: 1rem 3rem;
+		border-radius: 999px;
+		text-decoration: none;
+		font-weight: bold;
+		background: rgb(var(--accent));
+		color: white;
+		box-shadow: 0 4px 14px 0 rgba(136, 58, 234, 0.39);
+		transition: transform 0.2s;
+	}
+	.btn-primary:hover {
+		transform: translateY(-2px);
+	}
+	.btn-text {
+		color: #666;
+		text-decoration: none;
+		font-size: 0.9rem;
+	}
+	.btn-text:hover {
+		text-decoration: underline;
+	}
+
+	@media (max-width: 600px) {
+		.course-detail { padding: 1.5rem; }
+		.course-header { flex-direction: column; align-items: flex-start; gap: 0.5rem;}
+		h1 { font-size: 2rem; }
+	}
+</style>
