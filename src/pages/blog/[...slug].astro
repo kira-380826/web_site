@@ -1,0 +1,92 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+	const posts = await getCollection('blog');
+	return posts.map((post) => ({
+		params: { slug: post.slug },
+		props: post,
+	}));
+}
+
+const post = Astro.props;
+const { Content } = await post.render();
+---
+
+<Layout title={post.data.title}>
+	<main>
+		<article class="blog-post">
+			<header>
+				<h1>{post.data.title}</h1>
+				<div class="meta">
+					<time datetime={post.data.pubDate.toISOString()}>
+						{post.data.pubDate.toLocaleDateString('ja-JP')}
+					</time>
+				</div>
+			</header>
+			<div class="content">
+				<Content />
+			</div>
+		</article>
+
+		<div class="back-link">
+			<a href="/blog" class="btn-secondary">← ブログ一覧に戻る</a>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+	}
+	.blog-post {
+		background: white;
+		padding: 2rem;
+		border-radius: 12px;
+		box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+		margin: 4rem 0;
+	}
+	header {
+		margin-bottom: 2rem;
+		padding-bottom: 1rem;
+		border-bottom: 1px solid #eee;
+	}
+	h1 {
+		font-size: 2rem;
+		color: rgb(var(--accent-dark));
+		margin-bottom: 0.5rem;
+	}
+	.content {
+		line-height: 1.8;
+		font-size: 1.1rem;
+	}
+	/* Markdown内のスタイル調整 */
+	.content :global(h2) {
+		font-size: 1.5rem;
+		margin-top: 2rem;
+		margin-bottom: 1rem;
+		border-left: 4px solid rgb(var(--accent));
+		padding-left: 1rem;
+	}
+	.content :global(p) {
+		margin-bottom: 1.5rem;
+	}
+	.back-link {
+		text-align: center;
+		padding-bottom: 4rem;
+	}
+	.btn-secondary {
+		display: inline-block;
+		padding: 0.8rem 1.6rem;
+		border-radius: 999px;
+		text-decoration: none;
+		font-weight: bold;
+		background: white;
+		color: rgb(var(--accent));
+		border: 1px solid rgb(var(--accent));
+	}
+</style>

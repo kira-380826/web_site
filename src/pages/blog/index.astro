@@ -1,0 +1,100 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<Layout title="ブログ記事一覧 | 情報工学部生の家庭教師">
+	<main>
+		<section class="blog-header">
+			<h1>ブログ・コラム</h1>
+			<p>学習のヒントや、情報工学の世界について発信します。</p>
+		</section>
+
+		<section class="post-list">
+			{posts.map((post) => (
+				<article class="post-card">
+					<a href={`/blog/${post.slug}/`}>
+						<h2>{post.data.title}</h2>
+						<div class="meta">
+							<time datetime={post.data.pubDate.toISOString()}>
+								{post.data.pubDate.toLocaleDateString('ja-JP')}
+							</time>
+							<p>{post.data.description}</p>
+						</div>
+					</a>
+				</article>
+			))}
+		</section>
+
+		<div class="back-link">
+			<a href="/" class="btn-secondary">← トップページに戻る</a>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+	}
+	.blog-header {
+		text-align: center;
+		padding: 4rem 0 2rem;
+	}
+	h1 {
+		font-size: 2.5rem;
+		margin-bottom: 0.5rem;
+		color: rgb(var(--accent-dark));
+	}
+	.post-list {
+		display: grid;
+		gap: 2rem;
+		margin-bottom: 4rem;
+	}
+	.post-card {
+		background: white;
+		border-radius: 8px;
+		box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+		transition: transform 0.2s;
+		border: 1px solid #eee;
+	}
+	.post-card:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 8px 12px rgba(0,0,0,0.1);
+	}
+	.post-card a {
+		display: block;
+		padding: 1.5rem;
+		text-decoration: none;
+		color: inherit;
+	}
+	.post-card h2 {
+		margin: 0 0 0.5rem 0;
+		font-size: 1.5rem;
+		color: rgb(var(--accent));
+	}
+	.meta {
+		color: #666;
+		font-size: 0.9rem;
+	}
+	.back-link {
+		text-align: center;
+		padding-bottom: 4rem;
+	}
+	.btn-secondary {
+		display: inline-block;
+		padding: 0.8rem 1.6rem;
+		border-radius: 999px;
+		text-decoration: none;
+		font-weight: bold;
+		background: white;
+		color: rgb(var(--accent));
+		border: 1px solid rgb(var(--accent));
+	}
+</style>
