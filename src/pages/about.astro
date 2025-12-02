@@ -1,0 +1,221 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="講師紹介 | 情報工学部生の家庭教師">
+	<main>
+		<section class="header-section">
+			<h1>講師紹介</h1>
+			<p>「なぜ？」を大切にする指導で、根本的な理解をサポートします。</p>
+		</section>
+
+		<section class="profile-section">
+			<div class="profile-layout">
+				<div class="profile-image">
+					<div class="image-placeholder">講師画像<br>(任意)</div>
+				</div>
+				<div class="profile-info">
+					<h2>細川 晃良（ホソカワ キラ）</h2>
+					<p class="university">東京都市大学 情報工学部 2年生</p>
+					<div class="bio">
+						<p>
+							はじめまして。大学ではコンピュータサイエンスを専攻し、日々プログラミングやアルゴリズムの勉強に励んでいます。<br>
+							「コードが動いたときの感動」や「数学の問題が解けたときの爽快感」を生徒さんにも味わってもらいたいと思い、家庭教師を始めました。
+						</p>
+						<p>
+							受験時代は数学と英語が得意でした。自身の経験を活かし、単なる暗記ではない、論理的に考える「使える知識」としての学習法をお伝えします。
+						</p>
+					</div>
+					<div class="skills-box">
+						<dl>
+							<dt>指導可能科目</dt>
+							<dd>C言語, Java, Python, 数学(中高), 英語(中高), 情報I</dd>
+							<dt>得意分野</dt>
+							<dd>アルゴリズム、デバッグ指導、論理的思考力の養成、定期テスト対策</dd>
+							<dt>趣味</dt>
+							<dd>プログラミング、技術ブログ執筆、カフェ巡り</dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="detail-section">
+			<h3>指導への想い</h3>
+			<p>
+				プログラミングや数学は、一度つまずくと「わからない」が積み重なって嫌いになってしまいがちです。<br>
+				しかし、一つひとつの「なぜ？」を丁寧に紐解いていけば、必ず理解できるようになります。<br>
+				わからないところは何度でも聞いてください。「わかった！」という喜びを一緒に分かち合えるよう、粘り強くサポートします。
+			</p>
+
+			<h3>プログラミング学習について</h3>
+			<p>
+				エラーが出ても怖くありません。エラーは「ここを直せばもっと良くなる」というコンピュータからのメッセージです。<br>
+				一緒にエラーを読み解き、自力で解決できるエンジニアリング力を養いましょう。
+			</p>
+		</section>
+
+		<div class="back-link">
+			<a href="/#contact" class="btn-primary">無料相談・お問い合わせはこちら</a>
+			<br/><br/>
+			<a href="/" class="btn-text">← トップページに戻る</a>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		color: #333;
+	}
+	.header-section {
+		text-align: center;
+		padding: 4rem 0 3rem;
+	}
+	h1 {
+		font-size: 2.5rem;
+		color: rgb(var(--accent-dark));
+		margin-bottom: 0.5rem;
+	}
+	
+	/* Profile Style */
+	.profile-section {
+		background: white;
+		border-radius: 16px;
+		padding: 2.5rem;
+		margin-bottom: 3rem;
+		box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+		border: 1px solid #eee;
+	}
+	.profile-layout {
+		display: flex;
+		gap: 2.5rem;
+		align-items: flex-start;
+	}
+	.profile-image {
+		flex: 0 0 180px;
+		text-align: center;
+	}
+	.image-placeholder {
+		width: 100%;
+		aspect-ratio: 1 / 1;
+		background-color: #f0f0f0;
+		border-radius: 50%; /* 丸く切り抜く */
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #999;
+		font-size: 0.9rem;
+		border: 4px solid #fff;
+		box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+	}
+	/* imgタグを使う場合はこちらを適用 */
+	.profile-image img {
+		width: 100%;
+		border-radius: 50%;
+		border: 4px solid #fff;
+		box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+	}
+
+	.profile-info {
+		flex: 1;
+	}
+	h2 {
+		font-size: 1.8rem;
+		color: rgb(var(--accent));
+		margin: 0 0 0.2rem 0;
+	}
+	.university {
+		font-weight: bold;
+		color: #666;
+		margin-bottom: 1.5rem;
+		font-size: 1rem;
+	}
+	.bio {
+		line-height: 1.8;
+		margin-bottom: 1.5rem;
+	}
+
+	/* Skills Box */
+	.skills-box {
+		background: #f8f9fa;
+		padding: 1.5rem;
+		border-radius: 8px;
+	}
+	dl { margin: 0; }
+	dt {
+		font-weight: bold;
+		color: rgb(var(--accent-dark));
+		margin-top: 0.8rem;
+		font-size: 0.95rem;
+	}
+	dt:first-child { margin-top: 0; }
+	dd {
+		margin-left: 0;
+		margin-bottom: 0.5rem;
+		font-size: 0.95rem;
+	}
+
+	/* Detail Section */
+	.detail-section {
+		margin-bottom: 3rem;
+		padding: 0 1rem;
+	}
+	h3 {
+		font-size: 1.4rem;
+		color: rgb(var(--accent-dark));
+		border-bottom: 2px solid rgb(var(--accent-light));
+		padding-bottom: 0.5rem;
+		margin-bottom: 1rem;
+		margin-top: 3rem;
+	}
+	p {
+		line-height: 1.8;
+	}
+
+	/* Buttons */
+	.back-link {
+		text-align: center;
+		padding: 3rem 0;
+	}
+	.btn-primary {
+		display: inline-block;
+		padding: 1rem 3rem;
+		border-radius: 999px;
+		text-decoration: none;
+		font-weight: bold;
+		background: rgb(var(--accent));
+		color: white;
+		box-shadow: 0 4px 14px 0 rgba(136, 58, 234, 0.39);
+		transition: transform 0.2s;
+	}
+	.btn-primary:hover {
+		transform: translateY(-2px);
+	}
+	.btn-text {
+		color: #666;
+		text-decoration: none;
+		font-size: 0.9rem;
+	}
+	.btn-text:hover {
+		text-decoration: underline;
+	}
+
+	@media (max-width: 650px) {
+		.profile-layout {
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+		}
+		.profile-info {
+			text-align: left;
+		}
+		.image-placeholder, .profile-image img {
+			width: 150px; /* スマホでは少し小さく */
+			margin: 0 auto;
+		}
+	}
+</style>
